@@ -1,7 +1,7 @@
 param templateName string
 
 module ubuntu 'common/ubuntu.bicep' = {
-  name: 'Ubuntu'
+  name: '${templateName}-Ubuntu'
   scope: resourceGroup('AzurePipelinesImageBuilder')
   params: {
     imageName: 'Ubuntu-24.04'
@@ -11,6 +11,6 @@ module ubuntu 'common/ubuntu.bicep' = {
     sourcePublisher: 'Canonical'
     sourceOffer: 'ubuntu-24_04-lts'
     sourceSku: 'server'
-    diskControllerTypes: 'SCSI,NVMe'
+    diskControllerTypes: 'SCSI, NVMe'
   }
 }
